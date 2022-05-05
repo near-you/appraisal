@@ -1,15 +1,44 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/css/app.css" rel="stylesheet">
-        <title>Laravel-appraisal</title>
+@extends('layout.app')
 
-    </head>
-    <body>
+@section('title', 'Головна сторінка')
+
+@section('content')
+
+    @include('partials.header')
+
+    <div class="container md:mx-auto px-4">
         <h1>Laravel-appraisal</h1>
 
-        <script src="/js/app.js"></script>
-    </body>
-</html>
+        @foreach($profile as $file)
+
+        <table class=" border table-auto">
+            <thead>
+            <tr>
+                <th class="border border-slate-300 ...">Name</th>
+                <th class="border border-slate-300 ...">City</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="border border-slate-300 ...">{{ $file->name }}</td>
+                <td class="border border-slate-300 ...">{{ $file->city }}</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-300 ...">Ohio</td>
+                <td class="border border-slate-300 ...">Columbus</td>
+            </tr>
+            <tr>
+                <td class="border border-slate-300 ...">Michigan</td>
+                <td class="border border-slate-300 ...">Detroit</td>
+            </tr>
+            </tbody>
+        </table>
+
+            @endforeach
+
+    </div>
+
+
+
+
+@endsection
