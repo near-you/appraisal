@@ -6,8 +6,7 @@
 
     @include('partials.header')
 
-    <div class="container md:mx-auto px-4">
-        <h1>Laravel-appraisal</h1>
+    <div class="container md:mx-auto px-6 py-4">
 
         @foreach($profile as $file)
 
@@ -22,14 +21,6 @@
             <tr>
                 <td class="border border-slate-300 ...">{{ $file->name }}</td>
                 <td class="border border-slate-300 ...">{{ $file->city }}</td>
-            </tr>
-            <tr>
-                <td class="border border-slate-300 ...">Ohio</td>
-                <td class="border border-slate-300 ...">Columbus</td>
-            </tr>
-            <tr>
-                <td class="border border-slate-300 ...">Michigan</td>
-                <td class="border border-slate-300 ...">Detroit</td>
             </tr>
             </tbody>
         </table>
