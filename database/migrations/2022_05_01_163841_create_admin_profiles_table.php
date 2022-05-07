@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('admin_profiles', function (Blueprint $table) {
             $table->id();
+            $table->string("name");
+            $table->string("surname");
+            $table->integer("age");
+            $table->string("education");
+            $table->string("city");
+            $table->text("technical_skills")->nullable();
+            $table->text("soft_skills")->nullable();
             $table->timestamps();
         });
     }

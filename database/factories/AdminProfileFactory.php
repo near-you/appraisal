@@ -17,7 +17,13 @@ class AdminProfileFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "name" => $this->faker->firstName($gender = 'male'|'female'),
+            "surname" => $this->faker->lastName(),
+            "age" => $this->faker->numberBetween($min = 20, $max = 40),
+            "education" => $this->faker->sentence($nbWords = 4, $variableNbWords = true),
+            "city" => $this->faker->city(),
+            "technical_skills" => $this->faker->text($maxNbChars = 400),
+            "soft_skills" => $this->faker->text($maxNbChars = 400),
         ];
     }
 }
