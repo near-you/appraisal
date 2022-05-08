@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ForgotForm;
+use App\Http\Requests\LoginForm;
 use App\Mail\ForgotPassword;
 use App\Models\AdminUser;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
@@ -14,14 +15,12 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request)
+    public function login(LoginForm $request)
     {
-        $data = $request->validate([
-            "email" => ["required", "email", "string"],
-            "password" => ["required"]
-        ]);
+        $data = $request->validated();
 
         if(auth('admin')->attempt($data)) {
+
             return redirect(route('home'));
         }
 
@@ -40,7 +39,7 @@ class AuthController extends Controller
         return view("auth.forgot");
     }
 
-    public function forgot(Request $request)
+    public function forgot(ForgotForm $request)
     {
         $data = $request->validate([
             "email" => ["required", "email", "string", "exists:admin_users"],

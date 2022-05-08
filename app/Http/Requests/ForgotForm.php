@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class LoginForm extends FormRequest
+class ForgotForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,15 +24,7 @@ class LoginForm extends FormRequest
     public function rules()
     {
         return [
-            "email" => ["required", "email", "string"],
-            "password" => ["required"],
+            "email" => ["required", "email", "string", "exists:admin_users"],
         ];
-    }
-
-    protected function prepareForValidation()
-    {
-        if(is_null($this->password)) {
-            $this->request->remove('password');
-        }
     }
 }
