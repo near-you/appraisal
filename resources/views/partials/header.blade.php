@@ -7,12 +7,12 @@
     </div>
 
     <div class="sm:mb-0 self-center">
-{{--        @auth("web")--}}
-            <a href="{{-- route("logout") --}}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Вихід</a>
-{{--        @endauth--}}
+        @auth("admin")
+            <a href="{{ route("logout") }}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Sign Out</a>
+        @endauth
 
-{{--        @guest("web")--}}
-            <a href="{{-- route("login") --}}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Вхід</a>
-{{--        @endguest--}}
+        @guest("admin")
+            <a href="{{ route("login") }}" class="text-md no-underline text-grey-darker hover:text-blue-dark ml-2 px-1">Sign In</a>
+        @endguest
     </div>
 </nav>
