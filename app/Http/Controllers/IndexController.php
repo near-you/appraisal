@@ -12,7 +12,7 @@ class IndexController extends Controller
         $adminProfile = AdminProfile::all();
 
         return view('welcome', [
-            'profile' => $adminProfile
+            'adminProfile' => $adminProfile
         ]);
     }
 }
