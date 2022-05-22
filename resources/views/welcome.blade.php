@@ -4,25 +4,26 @@
 
 @section('content')
 
-    @foreach($adminProfile as $profile)
         <div class="container-fluid overcover">
             <div class="container profile-box">
                 <div class="row">
                     <div class="col-md-4 left-co">
                         <div class="left-side">
+                            @foreach($profiles as $profile)
                             <div class="profile-info">
-                                <img src="images/profile.jpg" alt="">
-                                <h3>{{ $profile->name }} {{ $profile->surname }}</h3>
-                                <span>Web Designer</span>
+                                <img src="images/profile.jpg" alt="Profile Photo">
+                                <h3>{{ $profile->first_name }} {{ $profile->last_name }}</h3>
+                                <span>{{ $profile->job_title }}</span>
                             </div>
+                            @endforeach
                             <h4 class="ltitle">Contact</h4>
+                            @foreach( $contacts as $contact)
                             <div class="contact-box pb0">
                                 <div class="icon">
                                     <i class="fas fa-phone"></i>
                                 </div>
                                 <div class="detail">
-                                    +123 8767 5465 <br>
-                                    +122 2345 3763
+                                    {{ $contact->phone_number }}
                                 </div>
                             </div>
                             <div class="contact-box pb0">
@@ -30,8 +31,7 @@
                                     <i class="fas fa-globe-americas"></i>
                                 </div>
                                 <div class="detail">
-                                    info@smarteyeapps.com <br>
-                                    www.smarteyeapps.com
+                                    {{ $contact->email }}
                                 </div>
                             </div>
                             <div class="contact-box">
@@ -39,9 +39,10 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="detail">
-                                    First Floor,Vincent Plaza, Toranto, Canada
+                                    {{ $contact->address }}
                                 </div>
                             </div>
+                            @endforeach
                             <h4 class="ltitle">Contact</h4>
                             <ul class="row social-link no-margin">
                                 <li><i class="fab fa-facebook-f"></i></li>
@@ -73,19 +74,17 @@
                             </ul>
                         </div>
                     </div>
+
                     <div class="col-md-8 rt-div">
                         <div class="rit-cover">
+                            @foreach($profiles as $profile)
                             <div class="hotkey">
-                                <h1 class="">Jonney Anderson </h1>
-                                <small>Web Designer</small>
+                                <h1 class="">{{ $profile->first_name }} {{ $profile->last_name }}</h1>
+                                <small>{{ $profile->job_title }}</small>
                             </div>
                             <h2 class="rit-titl"><i class="far fa-user"></i> Profile</h2>
                             <div class="about">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan purus enim, a
-                                    vestibulum est tristique sit amet. Suspendisse nibh nisl, imperdiet sit amet mi
-                                    vitae, elementum elementum nibh. Vivamus vitae eros malesuada, convallis dolor
-                                    malesuada, lobortis ex. Sed cursus augue risus, ac semper est consectetur vitae.
-                                    Praesent consequat metus sit amet rhoncus luctus.</p>
+                                <p>{{ $profile->description }}</p>
                                 <div class="btn-ro row no-margin">
                                     <ul class="btn-link">
                                         <li>
@@ -97,66 +96,29 @@
                                     </ul>
                                 </div>
                             </div>
-
+                            @endforeach
                             <h2 class="rit-titl"><i class="fas fa-briefcase"></i> Work Experiance</h2>
+                            @foreach($workExperiances as $workExperiance)
                             <div class="work-exp">
-                                <h6>Junior Software Developer <span>2008-2011</span></h6>
-                                <i>Microsoft / United States</i>
+                                <h6>{{$workExperiance->job_title}} <span>{{ $workExperiance->from }}-{{ $workExperiance->to }}</span></h6>
+                                <i>{{ $workExperiance->job_subtitle }}</i>
                                 <ul>
-                                    <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit.
-                                    </li>
-                                    <li><i class="far fa-hand-point-right"></i> Sorem dolor sit amet, consectetur.</li>
-                                    <li><i class="far fa-hand-point-right"></i> Porem ipsum sit amet, consectetur
-                                        adipiscing
+                                    <li><i class="far fa-hand-point-right"></i> {{ $workExperiance->job_description }}
                                     </li>
                                 </ul>
                             </div>
-                            <div class="work-exp">
-                                <h6>Junior Software Developer <span>2008-2011</span></h6>
-                                <i>Microsoft / United States</i>
-                                <ul>
-                                    <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit.
-                                    </li>
-
-                                    <li><i class="far fa-hand-point-right"></i> Sed cursus augue risus, ac semper est
-                                        consectetur vitae
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="work-exp">
-                                <h6>Junior Software Developer <span>2008-2011</span></h6>
-                                <i>Microsoft / United States</i>
-                                <ul>
-                                    <li><i class="far fa-hand-point-right"></i> Praesent consequat metus sit amet
-                                        rhoncus luctus.
-
-                                    </li>
-                                    <li><i class="far fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur.
-                                    </li>
-
-                                </ul>
-                            </div>
+                            @endforeach
 
                             <h2 class="rit-titl"><i class="fas fa-graduation-cap"></i> Education</h2>
+                            @foreach($educations as $education)
                             <div class="education">
                                 <ul class="row no-margin">
-                                    <li class="col-md-6"><span>2013-2015</span> <br>
-                                        Master Degree - Cambridg University
-                                    </li>
-                                    <li class="col-md-6"><span>2013-2015</span> <br>
-                                        Master Degree - Cambridg University
-                                    </li>
-                                    <li class="col-md-6"><span>2013-2015</span> <br>
-                                        Master Degree - Cambridg University
-                                    </li>
-                                    <li class="col-md-6"><span>2013-2015</span> <br>
-                                        Master Degree - Cambridg University
+                                    <li class="col-md-6"><span>{{ $education->from }} - {{ $education->to }}</span> <br>
+                                        {{ $education->college_name }}
                                     </li>
                                 </ul>
                             </div>
-
+                             @endforeach
                             <h2 class="rit-titl"><i class="fas fa-users-cog"></i> Skills</h2>
                             <div class="profess-cover row no-margin">
                                 <div class="col-md-6">
@@ -218,7 +180,7 @@
                 </div>
             </div>
         </div>
-        @endforeach
+
         </body>
 
         <script src="js/jquery-3.2.1.min.js"></script>

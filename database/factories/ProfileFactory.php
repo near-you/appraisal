@@ -20,10 +20,10 @@ class ProfileFactory extends Factory
         return [
             'first_name' => $this->faker->firstNameMale,
             'last_name' => $this->faker->lastName,
-            'birthday' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'description' => $this->faker->text($maxNbChars = 300),
+            'job_title' => $this->faker->jobTitle,
+            'birthday' => $this->faker->date('Y-m-d', 'now'),
+            'description' => $this->faker->text(300),
             'img' => $this->faker->image(storage_path('app/public/images'), 100, 100, null, false),
-
         ];
     }
 }
