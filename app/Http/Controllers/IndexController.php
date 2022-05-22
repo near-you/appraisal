@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AdminProfile;
+use App\Models\Contact;
+use App\Models\Education;
+use App\Models\Profile;
+use App\Models\WorkExpiriance;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        $adminProfile = AdminProfile::all();
-
         return view('welcome', [
-            'profile' => $adminProfile
+            'profiles' => Profile::all(),
+            'contacts' => Contact::all(),
+            'workExperiances' => WorkExpiriance::all(),
+            'educations' => Education::all(),
         ]);
     }
 }

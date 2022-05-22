@@ -2,11 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\AdminProfile;
-use App\Models\AdminUser;
+
+use App\Models\Contact;
+use App\Models\Education;
+use App\Models\Hobbie;
+use App\Models\Profile;
+use App\Models\Reference;
+use App\Models\Skill;
+use App\Models\SocialNetwork;
 use App\Models\User;
-use Database\Factories\AdminUserFactory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\WorkExpiriance;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,14 +23,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         User::factory(5)->create();
-
-         AdminUser::factory(1)->create([
-             "name" => "Admin",
-             "email" => "admin@admin.com",
-             "password" => bcrypt("12345")
-         ]);
-
-         AdminProfile::factory(1)->create();
+        User::factory()->create();
+        Contact::factory()->create();
+        Profile::factory()->create();
+        WorkExpiriance::factory(2)->create();
+        Education::factory(2)->create();
+        Hobbie::factory(3)->create();
+        Reference::factory(2)->create();
+        Skill::factory()->create();
+        SocialNetwork::factory(5)->create();
     }
 }
