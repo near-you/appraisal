@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Laravel Project',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -172,7 +172,7 @@ return [
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar_scrollbar_theme' => 'os-theme-secondary',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'admin',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -255,13 +255,14 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Contact',
             'icon' => 'fas fa-fw fa-user',
+            'url'  => 'admin/contact',
+            'can'    => 'admin',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'text' => 'Social Network',
+            'url'  => 'admin/social-network',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
