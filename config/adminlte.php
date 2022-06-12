@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Laravel Project',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -172,7 +172,7 @@ return [
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
-    'right_sidebar_scrollbar_theme' => 'os-theme-light',
+    'right_sidebar_scrollbar_theme' => 'os-theme-secondary',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
     /*
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'admin',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -255,68 +255,52 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Profile',
             'icon' => 'fas fa-fw fa-user',
+            'url'  => 'admin/profile',
+            'can'    => 'admin',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Contact',
+            'icon' => 'fas fa-fw fa-address-book',
+            'url'  => 'admin/contact',
+            'can'    => 'admin',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Social Network',
+            'url'  => 'admin/social-network',
+            'icon' => 'fas fa-fw fa-retweet',
+            'can'    => 'admin',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Work Experience',
+            'url'  => 'admin/work-experience',
+            'icon' => 'fas fa-fw fa-briefcase',
+            'can'    => 'admin',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Education',
+            'url'  => 'admin/education',
+            'icon' => 'fas fa-fw fa-graduation-cap',
+            'can'    => 'admin',
+        ],
+        [
+            'text' => 'Skill',
+            'url'  => 'admin/skill',
+            'icon' => 'fas fa-fw fa-brain',
+            'can'    => 'admin',
+        ],
+        [
+            'text' => 'Reference',
+            'url'  => 'admin/reference',
+            'icon' => 'fas fa-fw fa-bezier-curve',
+            'can'    => 'admin',
+        ],
+        [
+            'text' => 'Hobbies',
+            'url'  => 'admin/hobbes',
+            'icon' => 'fas fa-fw fa-bicycle',
+            'can'    => 'admin',
         ],
     ],
 
