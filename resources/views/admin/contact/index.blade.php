@@ -7,6 +7,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                </div>
+                <div class="col-sm-6">
                     <h2>Contact</h2>
                 </div>
 
@@ -25,9 +32,14 @@
             <div class="row">
 
                 <div class="col-12">
-                    <div class="card card-info card-outline">
+                    <div class="card card-info">
                         <div class="card-header">
-                            <h5 class="m-0">Contact</h5>
+                            <h3 class="card-title">Contact</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             @foreach( $contacts as $contact )
@@ -45,7 +57,7 @@
                             @if($contacts->isEmpty())
                                 <a href="{{ route('contact.create') }}" class="card-link">Add</a>
                             @endif
-                            <a href="#" class="card-link">Update</a>
+                            <a href="{{ route('contact.edit', ["contact" => $contact->id]) }}" class="card-link">Update</a>
                         </div>
                     </div>
                 </div>

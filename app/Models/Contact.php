@@ -20,7 +20,7 @@ class Contact extends Model
     public static function updateContactData($request, $id): int
     {
         $data = $request->except(['_token', '_method']);
-        return self::query()->where('id', $id)
+        return Contact::query()->where('id', $id)
             ->update($data);
     }
 }

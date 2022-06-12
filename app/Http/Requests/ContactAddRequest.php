@@ -24,7 +24,7 @@ class ContactAddRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email|unique:users,email|string',
+            'email' => 'required|email|unique:contacts,email|string',
             'phone_number' => 'required|max:18|string',
             'address' => 'required|max:255|string',
         ];

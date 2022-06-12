@@ -26,9 +26,14 @@
             <div class="row">
 
                 <div class="col-lg-6">
-                    <div class="card card-secondary card-outline">
+                    <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="m-0">Profile</h5>
+                            <h3 class="card-title">Profile</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             @foreach( $profiles as $profile )
@@ -52,9 +57,14 @@
                         </div>
                     </div>
 
-                    <div class="card card-secondary card-outline">
+                    <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="m-0">Social Network</h5>
+                            <h3 class="card-title">Social Network</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             @foreach( $social_networks as $social_network )
@@ -71,9 +81,14 @@
 
                 {{-- Contact group --}}
                 <div class="col-lg-6">
-                    <div class="card card-info card-outline">
+                    <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="m-0">Contact</h5>
+                            <h3 class="card-title">Contact</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="card-body">
                             @foreach( $contacts as $contact )
@@ -128,9 +143,14 @@
                 </div>
 
                 <div class="col-12">
-                    <div class="card card-secondary card-outline">
+                    <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="m-0">Work Expiriance</h5>
+                            <h3 class="card-title">Work Expiriance</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="card-body">

@@ -255,69 +255,52 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'Contact',
+            'text' => 'Profile',
             'icon' => 'fas fa-fw fa-user',
+            'url'  => 'admin/profile',
+            'can'    => 'admin',
+        ],
+        [
+            'text' => 'Contact',
+            'icon' => 'fas fa-fw fa-address-book',
             'url'  => 'admin/contact',
             'can'    => 'admin',
         ],
         [
             'text' => 'Social Network',
             'url'  => 'admin/social-network',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-retweet',
+            'can'    => 'admin',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Work Experience',
+            'url'  => 'admin/work-experience',
+            'icon' => 'fas fa-fw fa-briefcase',
+            'can'    => 'admin',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Education',
+            'url'  => 'admin/education',
+            'icon' => 'fas fa-fw fa-graduation-cap',
+            'can'    => 'admin',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Skill',
+            'url'  => 'admin/skill',
+            'icon' => 'fas fa-fw fa-brain',
+            'can'    => 'admin',
+        ],
+        [
+            'text' => 'Reference',
+            'url'  => 'admin/reference',
+            'icon' => 'fas fa-fw fa-bezier-curve',
+            'can'    => 'admin',
+        ],
+        [
+            'text' => 'Hobbies',
+            'url'  => 'admin/hobbes',
+            'icon' => 'fas fa-fw fa-bicycle',
+            'can'    => 'admin',
         ],
     ],
 

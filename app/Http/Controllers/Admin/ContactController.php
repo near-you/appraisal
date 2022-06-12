@@ -11,6 +11,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
@@ -73,12 +74,14 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return Application|Factory|View
      */
-    public function edit($id)
+    public function edit(int $id): View|Factory|Application
     {
-        //
+        return view('admin.contact.edit', [
+            "contact" => Contact::query()->find($id),
+        ]);
     }
 
     /**
@@ -87,9 +90,9 @@ class ContactController extends Controller
      * @param int $id
      * @return RedirectResponse
      */
-    public function update(ContactEditRequest $request, int $id): RedirectResponse
+    public function update(ContactEditRequest $request, int $id)
     {
-        Contact::updateContactData($request, $id);
+        $a = Contact::updateContactData($request, $id);
         return redirect()->route('contact.index')->with(
             'status',
             'Contact was updated!'
@@ -100,7 +103,7 @@ class ContactController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function destroy($id)
     {
