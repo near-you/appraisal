@@ -40,7 +40,7 @@
 
                         <div class="form-group">
                             <label for="inputEmail">Email</label>
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') ?? $contact->email }}" name="email" id="inputPhoneNumber" placeholder="Enter Email">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') ?? $contact->email }}" name="email" id="inputEmail" placeholder="Enter Email">
                             @error('email')
                             <br>
                             <span class="invalid-feedback" role="alert">

@@ -11,6 +11,7 @@ use App\Models\Reference;
 use App\Models\Skill;
 use App\Models\SocialNetwork;
 use App\Models\User;
+use App\Models\WorkExperience;
 use App\Models\WorkExpiriance;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create();
         Contact::factory()->create();
         Profile::factory()->create();
-        WorkExpiriance::factory(2)->create();
+        WorkExperience::factory(2)->create();
         Education::factory(2)->create();
         Hobbie::factory(3)->create();
         Reference::factory(2)->create();

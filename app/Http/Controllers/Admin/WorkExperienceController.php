@@ -3,27 +3,27 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EducationAddRequest;
-use App\Http\Requests\EducationEditRequest;
-use App\Models\Education;
+use App\Http\Requests\WorkExperienceAddRequest;
+use App\Http\Requests\WorkExperienceEditRequest;
+use App\Models\WorkExperience;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class EducationController extends Controller
+class WorkExperienceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return Application|Factory|View
      */
-    public function index(): Application|Factory|View
+    public function index(): View|Factory|Application
     {
-        return view('admin.education.index', [
-            'educations' => Education::all()
-        ]);
+        return view('admin.workexperience.index', [
+            'work_experiences' => WorkExperience::all() ]);
     }
 
     /**
@@ -33,9 +33,9 @@ class EducationController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        return view('admin.education.create',
+        return view('admin.workexperience.create',
             [
-                'educations' => Education::all()
+                'work_experiences' => WorkExperience::all()
             ]
         );
     }
@@ -43,18 +43,18 @@ class EducationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param EducationAddRequest $request
+     * @param WorkExperienceAddRequest $request
      * @return RedirectResponse
      */
-    public function store(EducationAddRequest $request): RedirectResponse
+    public function store(WorkExperienceAddRequest $request): RedirectResponse
     {
-        Education::query()->create(
+        WorkExperience::query()->create(
             $request->all()
         );
 
-        return redirect()->route('education.index')->with(
+        return redirect()->route('work-experience.index')->with(
             'status',
-            'Education was created!'
+            'Work Experience was created!'
         );
     }
 
@@ -75,26 +75,26 @@ class EducationController extends Controller
      * @param int $id
      * @return Application|Factory|View
      */
-    public function edit(int $id): Application|Factory|View
+    public function edit(int $id): View|Factory|Application
     {
-        return view('admin.education.edit', [
-            "education" => Education::query()->find($id),
+        return view('admin.workexperience.edit', [
+            "work_experience" => WorkExperience::query()->find($id),
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param EducationEditRequest $request
+     * @param WorkExperienceEditRequest $request
      * @param int $id
      * @return RedirectResponse
      */
-    public function update(EducationEditRequest $request, int $id): RedirectResponse
+    public function update(WorkExperienceEditRequest $request, int $id): RedirectResponse
     {
-        Education::updateEducationData($request, $id);
-        return redirect()->route('education.index')->with(
+        WorkExperience::updateWorkExperianceData($request, $id);
+        return redirect()->route('work-experience.index')->with(
             'status',
-            'Education was updated!'
+            'Work Experience was updated!'
         );
     }
 
@@ -106,9 +106,9 @@ class EducationController extends Controller
      */
     public function destroy(int $id): RedirectResponse
     {
-        Education::destroy($id);
-        return redirect()->route('education.index')->with(
+        WorkExperience::destroy($id);
+        return redirect()->route('work-experience.index')->with(
             'status',
-            'Education deleted');
+            'Work Experience deleted');
     }
 }

@@ -20,11 +20,11 @@ class ContactController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index()
+    public function index(): Factory|View|Application
     {
-        return view('admin.contact.index', [
-            'contacts' => Contact::all(),
-        ]);
+            return view('admin.contact.index', [
+                'contacts' => Contact::query()->get(),
+            ]);
     }
 
     /**
@@ -90,9 +90,9 @@ class ContactController extends Controller
      * @param int $id
      * @return RedirectResponse
      */
-    public function update(ContactEditRequest $request, int $id)
+    public function update(ContactEditRequest $request, int $id): RedirectResponse
     {
-        $a = Contact::updateContactData($request, $id);
+        Contact::updateContactData($request, $id);
         return redirect()->route('contact.index')->with(
             'status',
             'Contact was updated!'

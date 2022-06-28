@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\WorkExpiriance>
  */
-class WorkExpirianceFactory extends Factory
+class WorkExperienceFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +19,8 @@ class WorkExpirianceFactory extends Factory
         return [
             'job_title' => $this->faker->jobTitle,
             'job_subtitle' => $this->faker->words(3, true),
-            'from' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'to' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'from' => $this->faker->date($format = 'Y', $max = 'now'),
+            'to' => $this->faker->date($format = 'Y', $max = 'now'),
             'job_description' => $this->faker->text(300),
         ];
     }
