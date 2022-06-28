@@ -5,23 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Education extends Model
+class WorkExperience extends Model
 {
     use HasFactory;
 
-    protected $table = 'education';
+    protected $table = 'work_experiences';
 
     protected $fillable = [
-        'specialty',
-        'college_name',
+        'job_title',
+        'job_subtitle',
         'from',
         'to',
+        'job_description',
     ];
 
-    public static function updateEducationData($request, $id): int
+    public static function updateWorkExperianceData($request, $id): int
     {
         $data = $request->except(['_token', '_method']);
-        return Education::query()->where('id', $id)
+        return WorkExperience::query()->where('id', $id)
             ->update($data);
     }
 }

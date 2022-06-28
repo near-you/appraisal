@@ -290,15 +290,15 @@ return [
             'icon' => 'fas fa-fw fa-brain',
             'can'    => 'admin',
         ],
-        [
-            'text' => 'Reference',
-            'url'  => 'admin/reference',
-            'icon' => 'fas fa-fw fa-bezier-curve',
-            'can'    => 'admin',
-        ],
+//        [
+//            'text' => 'Reference',
+//            'url'  => 'admin/reference',
+//            'icon' => 'fas fa-fw fa-bezier-curve',
+//            'can'    => 'admin',
+//        ],
         [
             'text' => 'Hobbies',
-            'url'  => 'admin/hobbes',
+            'url'  => 'admin/hobbies',
             'icon' => 'fas fa-fw fa-bicycle',
             'can'    => 'admin',
         ],

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('phone_number')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('email')->unique();
             $table->string('address')->nullable();
             $table->timestamps();

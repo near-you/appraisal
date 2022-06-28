@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('specialty');
             $table->string('college_name');
-            $table->date('from');
-            $table->date('to');
+            $table->string('from');
+            $table->string('to');
             $table->timestamps();
         });
     }

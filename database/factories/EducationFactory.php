@@ -19,8 +19,8 @@ class EducationFactory extends Factory
         return [
             'specialty' => $this->faker->words(3, true),
             'college_name' => $this->faker->words(3, true),
-            'from' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'to' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'from' => $this->faker->date($format = 'Y', $max = 'now'),
+            'to' => $this->faker->date($format = 'Y', $max = 'now'),
         ];
     }
 }

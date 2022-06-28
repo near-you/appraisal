@@ -7,7 +7,7 @@ use App\Models\Contact;
 use App\Models\Education;
 use App\Models\Profile;
 use App\Models\SocialNetwork;
-use App\Models\WorkExpiriance;
+use App\Models\WorkExperience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +19,7 @@ class AdminController extends Controller
             //'user' => Auth::user(),
             'profiles' => Profile::all(),
             'contacts' => Contact::all(),
-            'workExperiances' => WorkExpiriance::all(),
+            'workExperiances' => WorkExperience::all(),
             'educations' => Education::all(),
             'social_networks' => SocialNetwork::all(),
         ]);
