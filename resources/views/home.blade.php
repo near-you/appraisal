@@ -9,13 +9,13 @@
             <div class="row">
                 <div class="col-md-4 left-co">
                     <div class="left-side">
-                        @foreach($profiles as $profile)
+
                             <div class="profile-info">
                                 <img src="images/profile.jpg" alt="Profile Photo">
                                 <h3>{{ $profile->first_name }} {{ $profile->last_name }}</h3>
                                 <span>{{ $profile->job_title }}</span>
                             </div>
-                        @endforeach
+
                         <h4 class="ltitle">Contact</h4>
                         @foreach( $contacts as $contact)
                             <div class="contact-box pb0">
@@ -77,7 +77,7 @@
 
                 <div class="col-md-8 rt-div">
                     <div class="rit-cover">
-                        @foreach($profiles as $profile)
+
                             <div class="hotkey">
                                 <h1 class="">{{ $profile->first_name }} {{ $profile->last_name }}</h1>
                                 <small>{{ $profile->job_title }}</small>
@@ -96,9 +96,9 @@
                                     </ul>
                                 </div>
                             </div>
-                        @endforeach
+
                         <h2 class="rit-titl"><i class="fas fa-briefcase"></i> Work Experiance</h2>
-                        @foreach($workExperiances as $workExperiance)
+                        @foreach($workExperiences as $workExperiance)
                             <div class="work-exp">
                                 <h6>{{$workExperiance->job_title}} <span>{{ $workExperiance->from }}-{{ $workExperiance->to }}</span></h6>
                                 <i>{{ $workExperiance->job_subtitle }}</i>

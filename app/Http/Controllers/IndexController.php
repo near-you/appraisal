@@ -14,6 +14,9 @@ class IndexController extends Controller
 {
     public function index()
     {
+        $post = Profile::query()->latest(); // fetch post from database
+        $post->increment('page_views_counter'); // add a new page view to our 'views' column by incrementing it
+
         return view('welcome', [
             'profiles' => Profile::all(),
             'contacts' => Contact::all(),
@@ -22,6 +25,7 @@ class IndexController extends Controller
             'social_networks' => SocialNetwork::all(),
             'skills' => Skill::all(),
             'hobbies' => Hobbie::all(),
+            'post' => $post,
         ]);
     }
 }
