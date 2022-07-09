@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;;
 
 Route::get('/', [IndexController::class, "index"])->name('welcome');
 Route::get('/home', [IndexController::class, "index"])->name('home');
+Route::get('/pdf', [\App\Http\Controllers\PDFController::class, "generatePDF"])->name('pdf');
 
 Route::middleware(['auth'])->group(function () {
 

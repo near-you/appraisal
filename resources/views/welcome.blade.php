@@ -91,7 +91,7 @@
                                             <a href=""><i class="fas fa-paper-plane"></i> Hire Me</a>
                                         </li>
                                         <li>
-                                            <a href=""><i class="fas fa-cloud-download-alt"></i> Download Resume</a>
+                                            <a href="{{route('pdf')}}"><i class="fas fa-cloud-download-alt"></i> Download Resume</a>
                                         </li>
                                     </ul>
                                 </div>
