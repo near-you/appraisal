@@ -45,9 +45,6 @@
                                 <h6 class="card-title"><b>{{ $social_network->social_net_name }}</b></h6>
                                 <p class="card-text">{{ $social_network->social_net_link }}</p>
                                 <div class="button-block">
-                                    @if($social_networks->isEmpty() || count($social_networks) < 5 )
-                                        <a href="{{ route('social-network.create', ["social_network" => $social_network->id]) }}" class="card-link">Add</a>
-                                    @endif
                                     <a href="{{ route('social-network.edit', ["social_network" => $social_network->id]) }}" class="card-link">Update</a>
                                     <form action="{{ route('social-network.destroy', ["social_network" => $social_network->id]) }}" method="POST">
                                             @csrf
@@ -58,6 +55,9 @@
                                 <hr>
                                 <br>
                             @endforeach
+                                @if($social_networks->isEmpty() || count($social_networks) < 5 )
+                                    <a href="{{ route('social-network.create', ["social_network" => $social_network->id]) }}" class="card-link">Add</a>
+                                @endif
                         </div>
                     </div>
                 </div>

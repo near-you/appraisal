@@ -54,9 +54,6 @@
                                 <h6 class="card-title"><b>To (Year)</b></h6>
                                 <p class="card-text">{{ $education->to }}</p>
 
-                                @if(count($educations) >= 1 || count($educations) <= 4)
-                                    <a href="{{ route('education.create') }}" class="card-link">Add</a>
-                                @endif
                                 <a href="{{ route('education.edit', ["education" => $education->id]) }}" class="card-link">Update</a>
                                 <form action="{{ route('education.destroy', ["education" => $education->id]) }}" method="POST">
                                     @csrf
@@ -67,7 +64,9 @@
                                 <br>
 
                             @endforeach
-
+                                @if(count($educations) >= 1 || count($educations) <= 4)
+                                    <a href="{{ route('education.create') }}" class="card-link">Add</a>
+                                @endif
                         </div>
                     </div>
                 </div>

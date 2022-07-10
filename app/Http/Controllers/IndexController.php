@@ -14,11 +14,11 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $view_counter = Profile::query()->latest();
+        $view_counter = Profile::query()->first();
         $view_counter->increment('page_views_counter');
 
         return view('welcome', [
-            'profiles' => Profile::all(),
+            'profile' => Profile::query()->first(),
             'contacts' => Contact::all(),
             'workExperiences' => WorkExperience::all(),
             'educations' => Education::all(),
