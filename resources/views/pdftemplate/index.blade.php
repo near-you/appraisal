@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CV Template</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="storage/css/bootstrap.min.css">
+    <link rel="stylesheet" href="storage/css/fontawsom-all.min.css">
+    <link rel="stylesheet" type="text/css" href="storage/css/style.css"/>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
                 <div class="left-side">
 
                         <div class="profile-info">
-                            <img src="assets/images/profile.jpg" alt="">
+                            <img src="{{'storage/images/thumbnail/'.$profile->img}}" alt="">
                             <h2>{{ $profile->first_name }} {{ $profile->last_name }}</h2>
                             <span>{{ $profile->job_title }}</span>
                         </div>
@@ -142,10 +142,10 @@
 </div>
 </body>
 
-<script src="assets/js/jquery-3.2.1.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/script.js"></script>
+<script src="storage/js/jquery-3.2.1.min.js"></script>
+<script src="storage/js/popper.min.js"></script>
+<script src="storage/js/bootstrap.min.js"></script>
+<script src="storage/js/script.js"></script>
 
 
 </html>
