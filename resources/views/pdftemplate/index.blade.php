@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CV Template</title>
 
-    <link rel="stylesheet" href="storage/css/bootstrap.min.css">
-    <link rel="stylesheet" href="storage/css/fontawsom-all.min.css">
-    <link rel="stylesheet" type="text/css" href="storage/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="storage/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="storage/css/style.css"/>
 </head>
 
 <body>
+
 <div class="container-fluid overcover">
     <div class="container profile-box">
         <div class="row">
-            <div class="col-md-4 left-co">
+            <div class="col-md-3 left-co">
                 <div class="left-side">
 
-                        <div class="profile-info">
-                            <img src="{{'storage/images/thumbnail/'.$profile->img}}" alt="">
-                            <h2>{{ $profile->first_name }} {{ $profile->last_name }}</h2>
-                            <span>{{ $profile->job_title }}</span>
-                        </div>
+                    <div class="profile-info">
+                        <img src="{{'storage/images/thumbnail/'.$profile->img}}" alt="">
+                        <h2>{{ $profile->first_name }} {{ $profile->last_name }}</h2>
+                        <span>{{ $profile->job_title }}</span>
+                    </div>
                     <h4 class="ltitle">Contact</h4>
                     @foreach( $contacts as $contact)
                         <div class="contact-box pb0">
@@ -59,34 +59,33 @@
 
                     <h4 class="ltitle">Hobbies</h4>
                     @foreach($hobbies as $hobby)
-                    <ul class="hoby row no-margin">
-                        <li>{{ $hobby->hobbies_title }}</li>
-                    </ul>
+                        <ul class="hoby row no-margin">
+                            <li>{{ $hobby->hobbies_title }}</li>
+                        </ul>
                     @endforeach
                 </div>
             </div>
-
-            <div class="col-md-8 rt-div">
+            <div class="col-md-9 rt-div">
                 <div class="rit-cover">
-                        <div class="hotkey">
-                            <h1 class="">{{ $profile->first_name }} {{ $profile->last_name }}</h1>
-                            <small>{{ $profile->job_title }}</small>
+                    <div class="hotkey">
+                        <h1 class="">{{ $profile->first_name }} {{ $profile->last_name }}</h1>
+                        <small>{{ $profile->job_title }}</small>
+                    </div>
+                    <h2 class="rit-titl"><i class="far fa-user"></i> Profile</h2>
+                    <div class="about">
+                        <p>{{ $profile->description }}</p>
+                        <div class="btn-ro row no-margin">
+                            <ul class="btn-link">
+                                {{--<li>
+                                    <a href=""><i class="fas fa-paper-plane"></i> Hire Me</a>
+                                </li>--}}
+                                <li>
+                                    <a href="{{route('pdf')}}"><i class="fas fa-cloud-download-alt"></i> Download
+                                        Resume</a>
+                                </li>
+                            </ul>
                         </div>
-                        <h2 class="rit-titl"><i class="far fa-user"></i> Profile</h2>
-                        <div class="about">
-                            <p>{{ $profile->description }}</p>
-                            <div class="btn-ro row no-margin">
-                                <ul class="btn-link">
-                                    {{--<li>
-                                        <a href=""><i class="fas fa-paper-plane"></i> Hire Me</a>
-                                    </li>--}}
-                                    <li>
-                                        <a href="{{route('pdf')}}"><i class="fas fa-cloud-download-alt"></i> Download
-                                            Resume</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    </div>
                     <h2 class="rit-titl"><i class="fas fa-briefcase"></i> Work Experience</h2>
                     @foreach($workExperiences as $workExperience)
                         <div class="work-exp">
@@ -140,12 +139,19 @@
         </div>
     </div>
 </div>
-</body>
-
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2">
+            One of three columns
+        </div>
+        <div class="col-xs-10">
+            One of three columns
+        </div>
+    </div>
+</div>
 <script src="storage/js/jquery-3.2.1.min.js"></script>
-<script src="storage/js/popper.min.js"></script>
+<script src="storage/js/popper.js"></script>
 <script src="storage/js/bootstrap.min.js"></script>
 <script src="storage/js/script.js"></script>
-
-
+</body>
 </html>
