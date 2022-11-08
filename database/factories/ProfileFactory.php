@@ -24,6 +24,7 @@ class ProfileFactory extends Factory
             'birthday' => $this->faker->date('Y-m-d', 'now'),
             'description' => $this->faker->text(300),
             'img' => $this->faker->image(storage_path('app/public/images'), 100, 100, null, false),
+            'page_views_counter' => 0,
         ];
     }
 }
