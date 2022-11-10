@@ -59,7 +59,6 @@
                                 <br>
                                 <hr>
                             @endforeach
-                            <a href="{{ route('hobbies.index') }}" class="btn btn-outline-secondary">Cancel</a>
                             @if(count($hobbies) <= 6)
                                 <a href="{{ route('hobbies.create') }}" class="card-link">Add</a>
                             @endif

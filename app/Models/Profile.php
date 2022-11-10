@@ -46,11 +46,11 @@ class Profile extends Model
     public static function imgDestroy(int $id)
     {
         if(Profile::query()->find($id)->img) {
-            if (file_exists(Storage::path('public/images/') . 'origin/' . Profile::query()->find($id)->img)) {
-                unlink(Storage::path('public/images/') . 'origin/' . Profile::query()->find($id)->img);
+            if (file_exists(public_path('public/images/') . 'origin/' . Profile::query()->find($id)->img)) {
+                unlink(public_path('public/images/') . 'origin/' . Profile::query()->find($id)->img);
             }
-            if (file_exists(Storage::path('public/images/') . 'thumbnail/' . Profile::query()->find($id)->img)) {
-                unlink(Storage::path('public/images/') . 'thumbnail/' . Profile::query()->find($id)->img);
+            if (file_exists(public_path('public/images/') . 'thumbnail/' . Profile::query()->find($id)->img)) {
+                unlink(public_path('public/images/') . 'thumbnail/' . Profile::query()->find($id)->img);
             }
         }
     }

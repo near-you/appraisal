@@ -9,16 +9,22 @@ use App\Models\Profile;
 use App\Models\Skill;
 use App\Models\SocialNetwork;
 use App\Models\WorkExperience;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(): Factory|View|Application
     {
-        $view_counter = Profile::query()->latest();
-        $view_counter->increment('page_views_counter');
+        $view_counter = Profile::query()->first();
+        if (!empty($view_counter)) {
+            $view_counter->increment('page_views_counter');
+        }
+
 
         return view('welcome', [
-            'profiles' => Profile::all(),
+            'profile' => Profile::query()->first(),
             'contacts' => Contact::all(),
             'workExperiences' => WorkExperience::all(),
             'educations' => Education::all(),

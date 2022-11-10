@@ -57,9 +57,6 @@
                                 <h6 class="card-title"><b>Description</b></h6>
                                 <p class="card-text">{{ $work_experience->job_description }}</p>
 
-                                @if(count($work_experiences) >= 1 || count($work_experiences) <= 5)
-                                    <a href="{{ route('work-experience.create') }}" class="card-link">Add</a>
-                                @endif
                                 <a href="{{ route('work-experience.edit', ["work_experience" => $work_experience->id]) }}" class="card-link">Update</a>
                                 <form action="{{ route('work-experience.destroy', ["work_experience" => $work_experience->id]) }}" method="POST">
                                     @csrf
@@ -70,7 +67,9 @@
                                 <br>
 
                             @endforeach
-
+                                @if(count($work_experiences) >= 1 || count($work_experiences) <= 5)
+                                    <a href="{{ route('work-experience.create') }}" class="card-link">Add</a>
+                                @endif
                         </div>
                     </div>
                 </div>
