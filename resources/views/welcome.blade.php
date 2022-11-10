@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'MyCV')
 
 @section('content')
 
@@ -31,7 +31,7 @@
                             </div>
                             <div class="contact-box pb0">
                                 <div class="icon">
-                                    <i class="fas fa-globe-americas"></i>
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div class="detail">
                                     <a style="color: #ffffff" href="mailto:{{ $contact->email }}">Email Me</a>
@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        <h4 class="ltitle">Contact</h4>
+                        <h4 class="ltitle">Social Network</h4>
                         <ul class="social-link row no-margin">
                             @foreach($social_networks as $social_net)
                                 <li><a style="color: #ffffff" href="{{ $social_net->social_net_link }}">{{ $social_net->social_net_name }}</a></li>
@@ -70,16 +70,7 @@
                             <h2 class="rit-titl"><i class="far fa-user"></i> Profile</h2>
                             <div class="about">
                                 <p>{{ $profile->description }}</p>
-                                <div class="btn-ro row no-margin">
-                                    <ul class="btn-link">
-                                        <li>
-                                            <a href=""><i class="fas fa-paper-plane"></i> Hire Me</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('pdf')}}"><i class="fas fa-cloud-download-alt"></i> Download Resume</a>
-                                        </li>
-                                    </ul>
-                                </div>
+
                             </div>
                         <h2 class="rit-titl"><i class="fas fa-briefcase"></i> Work Experience</h2>
                         @foreach($workExperiences as $workExperience)
