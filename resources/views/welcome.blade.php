@@ -9,15 +9,14 @@
             <div class="row">
                 <div class="col-md-4 left-co">
                     <div class="left-side">
-                            <div class="profile-info">
-                                <img
-                                    src="{{ Illuminate\Support\Facades\Storage::url('images/thumbnail/'.$profile->img) }}"
-                                    alt="Profile Photo">
-                                <h3>{{ $profile->first_name }} {{ $profile->last_name }}</h3>
-                                <span>{{ $profile->job_title }}</span>
-                            </div>
-{{--                        {{ $link =  str_replace('public', '', $_SERVER['DOCUMENT_ROOT'])}}--}}
-{{--                        {{dd( $link.('storage/app/public/images/thumbnail/'.$profile->img) )}}--}}
+                        <div class="profile-info">
+                            <img
+                                src="{{ asset('storage/images/thumbnail/'.$profile->img) }}"
+                                alt="User Photo">
+                            <h3>{{ $profile->first_name }} {{ $profile->last_name }}</h3>
+                            <span>{{ $profile->job_title }}</span>
+                        </div>
+
                         <h4 class="ltitle">Contact</h4>
                         @foreach( $contacts as $contact)
                             <div class="contact-box pb0">

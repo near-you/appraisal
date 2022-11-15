@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\SocialNetworkController;
 use App\Http\Controllers\Admin\WorkExperienceController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;;
 
@@ -26,7 +27,7 @@ use Illuminate\Support\Facades\Route;;
 
 Route::get('/', [IndexController::class, "index"])->name('welcome');
 Route::get('/home', [IndexController::class, "index"])->name('home');
-Route::get('/pdf', [\App\Http\Controllers\PDFController::class, "generatePDF"])->name('pdf');
+Route::get('/pdf', [PDFController::class, "generatePDF"])->name('pdf');
 
 Route::middleware(['auth'])->group(function () {
 
@@ -45,5 +46,5 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
