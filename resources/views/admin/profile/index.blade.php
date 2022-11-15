@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-12 col-sm-4">
                         <div class="col-12">
-                            <img src="{{ Illuminate\Support\Facades\Storage::url('images/thumbnail/'.$profile->img) }}"
+                            <img src="{{ asset('storage/images/thumbnail/'.$profile->img) }}"
                                  class="profile-image" alt="User Image">
                         </div>
                     </div>

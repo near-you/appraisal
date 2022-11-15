@@ -19,7 +19,7 @@
                 <div class="left-side">
 
                     <div class="profile-info">
-                        <img src="{{'storage/images/thumbnail/'.$profile->img}}" alt="">
+                        <img src="{{ asset('storage/images/thumbnail/'.$profile->img) }}" alt="User Photo">
                         <h2>{{ $profile->first_name }} {{ $profile->last_name }}</h2>
                         <span>{{ $profile->job_title }}</span>
                     </div>

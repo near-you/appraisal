@@ -90,8 +90,8 @@
                 <label for="inputFile">Current User Image</label>
                 <div class="col-4">
                     <img
-                        src="{{ Illuminate\Support\Facades\Storage::url('images/thumbnail/'.$profile->img) }}"
-                        class="user-image" alt="User Image">
+                        src="{{ asset('storage/images/thumbnail/'.$profile->img) }}"
+                        class="user-image" alt="User Photo">
                 </div>
                 <label for="inputFile">Upload New Profile Photo</label>
                 <div class="input-group">

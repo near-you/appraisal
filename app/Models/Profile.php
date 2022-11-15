@@ -33,10 +33,10 @@ class Profile extends Model
         if ($files = $request->file('img')) {
             self::imgDestroy($id);
             $imgName = Profile::imgName($files);
-            $data['img']->move(Storage::path('public/images/') . 'origin/', $imgName);
-            $thumbnail = Image::make(Storage::path('public/images/') . 'origin/' . $imgName);
+            $data['img']->move(Storage::path('images/') . 'origin/', $imgName);
+            $thumbnail = Image::make(Storage::path('images/') . 'origin/' . $imgName);
             $thumbnail->fit(128, 128);
-            $thumbnail->save(Storage::path('public/images/') . 'thumbnail/' . $imgName);
+            $thumbnail->save(Storage::path('images/') . 'thumbnail/' . $imgName);
             $data['img'] = $imgName;
         }
 
@@ -46,11 +46,11 @@ class Profile extends Model
     public static function imgDestroy(int $id)
     {
         if(Profile::query()->find($id)->img) {
-            if (file_exists(public_path('public/images/') . 'origin/' . Profile::query()->find($id)->img)) {
-                unlink(public_path('public/images/') . 'origin/' . Profile::query()->find($id)->img);
+            if (file_exists(public_path('images/') . 'origin/' . Profile::query()->find($id)->img)) {
+                unlink(public_path('images/') . 'origin/' . Profile::query()->find($id)->img);
             }
-            if (file_exists(public_path('public/images/') . 'thumbnail/' . Profile::query()->find($id)->img)) {
-                unlink(public_path('public/images/') . 'thumbnail/' . Profile::query()->find($id)->img);
+            if (file_exists(public_path('images/') . 'thumbnail/' . Profile::query()->find($id)->img)) {
+                unlink(public_path('images/') . 'thumbnail/' . Profile::query()->find($id)->img);
             }
         }
     }
